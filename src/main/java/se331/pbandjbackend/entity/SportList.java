@@ -19,11 +19,8 @@ public class SportList {
         String sport_title;
         String medal_type;
 
-
-
-        @OneToMany(mappedBy = "SportList")
-        @Builder.Default
-        List<SportList> SportList = new ArrayList<>();
+        @ManyToOne
+        Country country;
     }
 
 

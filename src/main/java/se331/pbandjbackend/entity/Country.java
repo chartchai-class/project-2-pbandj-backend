@@ -26,11 +26,9 @@ public class Country {
         Long total;
         Long  numberOfOlympicsParticipatedIn;
 
-        @ManyToOne
-        Country Country;
 
         @OneToMany(mappedBy = "country")
         @Builder.Default
-        List<SportList> SportList = new ArrayList<>();
+        List<SportList> sportList = new ArrayList<>();
     }
 
