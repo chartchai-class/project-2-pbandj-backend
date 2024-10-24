@@ -26,8 +26,6 @@ public class Country {
         Long total;
         Long  numberOfOlympicsParticipatedIn;
 
-        @OneToMany(mappedBy = "Sport")
-        @Builder.Default
-        List<User> ownEvents = new ArrayList<>();
+
     }
 

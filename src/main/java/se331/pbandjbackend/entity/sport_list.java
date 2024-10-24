@@ -21,9 +21,7 @@ public class sport_list {
 
 
 
-        @OneToMany(mappedBy = "Sport")
-        @Builder.Default
-        List<User> ownEvents = new ArrayList<>();
+
     }
 
 

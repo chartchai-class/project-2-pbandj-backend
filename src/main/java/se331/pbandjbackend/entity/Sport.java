@@ -23,7 +23,4 @@ public class Sport {
     Long bronze;
 
 
-    @OneToMany(mappedBy = "Sport")
-    @Builder.Default
-    List<User> ownEvents = new ArrayList<>();
 }
