@@ -25,7 +25,16 @@ public class User {
     private String role;
 
     // Getters and Setters
-   
+    @ManyToOne
+    Sport sport;
+    @ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "participant_event_history",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "participant_id")
+    )
+    @Builder.Default
+    List<SportList> sport_lists = new ArrayList<>();
 }
 
 

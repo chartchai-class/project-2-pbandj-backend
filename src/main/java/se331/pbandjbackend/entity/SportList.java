@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class sport_list {
+public class SportList {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,9 @@ public class sport_list {
 
 
 
-
+        @OneToMany(mappedBy = "SportList")
+        @Builder.Default
+        List<SportList> SportList = new ArrayList<>();
     }
 
 
