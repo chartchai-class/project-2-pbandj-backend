@@ -18,7 +18,7 @@ public class Country {
         Long id;
 
         String countryName;
-        String desc;
+        String description;
         String img;
 
         Integer amountGold;
