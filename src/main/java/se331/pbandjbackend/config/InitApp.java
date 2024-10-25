@@ -24,6 +24,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
+        // Initialize Sport
         Sport athleticsW = sportRepository.save(Sport.builder().title("Athletics (Women's 400m)").build()); // 1
         Sport athleticsM = sportRepository.save(Sport.builder().title("Athletics (Men's 400m)").build()); //2
         Sport athleticsWH = sportRepository.save(Sport.builder().title("Athletics (Women's Heptathlon)").build()); //3
@@ -35,17 +36,18 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
         // Initialize Countries
         Country australia = countryRepository.save(Country.builder() //1
-                        .countryName("Australia")
-                        .description("Island continent with diverse landscapes, unique wildlife, and a multicultural society.")
-                        .img("https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg")
-                        .amountGold(17)
-                        .amountSilver(8)
-                        .amountBronze(22)
-                        .total(47)
-                        .firstOlympicAppearance("1896")
-                        .numberOfOlympicsParticipatedIn(32)
+                .countryName("Australia")
+                .description("Island continent with diverse landscapes, unique wildlife, and a multicultural society.")
+                .img("https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg")
+                .amountGold(17)
+                .amountSilver(8)
+                .amountBronze(22)
+                .total(47)
+                .firstOlympicAppearance("1896")
+                .numberOfOlympicsParticipatedIn(32)
 
-        .build());
+                .build());
+
         Country austria = countryRepository.save(Country.builder() //2
                 .countryName("Austria")
                 .description("Central European country known for its Alps, classical music, and neutrality.")
@@ -207,4 +209,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
 
     }
+    @Override
+    public boolean supportsAsyncExecution() {
+        return ApplicationListener.super.supportsAsyncExecution();
+    }
+
 }
