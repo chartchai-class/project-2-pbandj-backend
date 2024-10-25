@@ -16,19 +16,29 @@ public class Country {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @EqualsAndHashCode.Exclude
         Long id;
-        String country;
+
+        String countryName;
         String desc;
         String img;
+
+        Integer amountGold;
+        Integer amountSilver;
+        Integer amountBronze;
+        Integer total;
+
         String firstOlympicAppearance;
-        Long gold;
-        Long silver;
-        Long bronze;
-        Long total;
-        Long  numberOfOlympicsParticipatedIn;
+        Integer numberOfOlympicsParticipatedIn;
 
-
-        @OneToMany(mappedBy = "country")
+        @OneToMany(mappedBy = "gold")
         @Builder.Default
-        List<SportList> sportList = new ArrayList<>();
-    }
+        List<Sport> goldMedals = new ArrayList<>();
+
+        @OneToMany(mappedBy = "silver")
+        @Builder.Default
+        List<Sport> silverMedals = new ArrayList<>();
+
+        @OneToMany(mappedBy = "bronze")
+        @Builder.Default
+        List<Sport> bronzeMedals = new ArrayList<>();
+}
 

@@ -15,11 +15,21 @@ public class Sport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
-
     Long id;
-    String sport_title;
-    Long gold;
-    Long silver;
-    Long bronze;
+
+    String title;
+
+    @ManyToOne
+//    @JoinColumn(name = "gold_country_id") // Not sure if use
+    Country gold;
+
+    @ManyToOne
+//    @JoinColumn(name = "silver_country_id") // Same
+    Country silver;
+
+    @ManyToOne
+//    @JoinColumn(name = "bronze_country_id") // here as well
+    Country bronze;
 
 }
+
