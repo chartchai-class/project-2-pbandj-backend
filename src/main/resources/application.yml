@@ -3,6 +3,12 @@ spring:
     active:
       - db
   application:
+    security:
+      jwt:
+        secret-key: 045a957699eed89c2e15097b5d1c782a74d027a46dc66872500422be78446b445aeb0c45a926cc6a322ad7a7d1f043f16d912e10795215b77455f8cdcffa2d88c265092d180a0878bb1a40aa65d27b42246b4e622d4d4bf76ced81e8a2b20aadb013f2027c9901f531a23b6ecadfbd66b2d216d91741e2de8852f8243aefd3fb7a638638064e7cc8a9b668b079af1f3a1c4891eca3ca9b051319be9638d880cdee37ae73cc57ba68ccc45d89f11e905f1649b2be532f3e57cf024b260deffc4b57bbeb40d2a4eda2f5091b14899e0493362b95b751db6bf28eadb4e89b1c115a4ca4b0114f1f18a627178772a5a320bf43ddd3b9478e1e2377bd0860f1c8b2b39bb31c655e637f76943fd722ea52a06dc98405607d6c49e66a075d06de4e8928b661cb56db0b5aed4777d740ed961ffa737c1aff2b56fc83708c24d86a3530fd02effef706f163dc463d9bf28637d69aa4bd3d62fe50c868f3fe6df263cca4508c49f96f5b1e77ab54c546848f767af0b53e24aa1e32824174de0ea2a4348acfcb122c928cb94fe512e18602fdad98c38b3deec2ef981ba19db7af5dc435d6d1c272adc2218e16a9f6ea69d0666f254ecf15060f1783163ed9d7e60e80f7cab005fb766dda392b40ac04fa8c25cf62bbc4dcd3a2c206bc1981c3dc84962339fb3d0908127c8bc4c42680580a87d3b64246e9820dfbaaebcfce3f849c4a8a08a3
+        expiration: 86400000 # 86400000 # a day
+        refresh-token:
+          expiration: 604800000 # 7 days
     name: 331-backend
   datasource:
     url: jdbc:mysql://localhost:3306/olympicdb?createDatabaseIfNotExist=true&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true
