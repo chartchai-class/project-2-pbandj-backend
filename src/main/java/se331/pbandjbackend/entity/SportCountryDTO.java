@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class SportCountryDTO {
     Long id;
     String countryName;
-    String desc;
+    String description;
     String img;
     Integer amountGold;
     Integer amountSilver;

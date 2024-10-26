@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Data
@@ -17,11 +20,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
     String username;
     String password;
     String role;
-
-
+    @OneToMany (mappedBy = "author")
+    List<Comment> comments = new ArrayList<>();
 }
 
 

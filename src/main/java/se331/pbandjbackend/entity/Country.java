@@ -40,5 +40,8 @@ public class Country {
         @OneToMany(mappedBy = "bronze")
         @Builder.Default
         List<Sport> bronzeMedals = new ArrayList<>();
+
+        @OneToMany(mappedBy = "country")
+        List<Comment> comments = new ArrayList<>();
 }
 

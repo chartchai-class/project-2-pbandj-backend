@@ -14,4 +14,7 @@ public interface LabMapper {
     SportDTO getSportDto(Sport sport);
     List<SportDTO> getSportDto(List<Sport> sports);
 
+    CommentDTO getCommentDto(Comment comment);
+    List<CommentDTO> getCommentDto(List<Comment> comments);
+
 }
