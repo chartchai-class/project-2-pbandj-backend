@@ -15,7 +15,7 @@ import java.util.List;
 public class CountryDTO {
     Long id;
     String countryName;
-    String desc;
+    String description;
     String img;
     Integer amountGold;
     Integer amountSilver;
